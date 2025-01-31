@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Occasion extends Model
 {
-
+    protected $fillable = [
+      'name',
+      'status'
+    ];
 }
