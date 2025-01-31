@@ -10,6 +10,6 @@ class Category extends Model
         'category_id',
         'name',
         'image',
-        'status'
+        'status',
     ];
 }
