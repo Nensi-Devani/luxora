@@ -23,6 +23,7 @@ class Product extends Model
         'express_delivery_charge',
         'warranty_period',
         'images',
-        'certificate'
+        'certificate',
+        'status'
     ];
 }
