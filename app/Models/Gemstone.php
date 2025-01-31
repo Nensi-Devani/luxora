@@ -8,6 +8,6 @@ class Gemstone extends Model
 {
     protected $fillable = [
         'name',
-        'status'
+        'status',
     ];
 }
