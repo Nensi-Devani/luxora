@@ -17,6 +17,6 @@ class Order extends Model
         'payment_mode',
         'payment_status',
         'user_detail_id',
-        'tracking_no',
+        'tracking_no'
     ];
 }
