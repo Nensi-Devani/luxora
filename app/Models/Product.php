@@ -10,6 +10,7 @@ class Product extends Model
         'metal_id',
         'category_id',
         'gemstone_id',
+        'ocassion_id',
         'name',
         'description',
         'gender',
