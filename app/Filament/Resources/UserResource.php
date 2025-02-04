@@ -57,7 +57,6 @@ class UserResource extends Resource
                     ->placeholder('Select a role')
                     ->native(false),
                 Forms\Components\FileUpload::make('avatar')
-//                    ->avatar()
                     ->openable()
                     ->previewable(true)
                     ->image()
