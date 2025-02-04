@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
-use App\Models\UserDetail;
 use Faker\Provider\Text;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -22,8 +21,6 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-
-//    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
@@ -73,7 +70,6 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('Sr no.')
                     ->rowIndex(),
                 Tables\Columns\ImageColumn::make('avatar')
-                    ->disk('public')
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
@@ -96,9 +92,9 @@ class UserResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+//                Tables\Actions\BulkActionGroup::make([
+//                    Tables\Actions\DeleteBulkAction::make(),
+//                ]),
             ]);
     }
 
