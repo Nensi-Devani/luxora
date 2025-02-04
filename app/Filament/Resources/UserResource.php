@@ -75,10 +75,12 @@ class UserResource extends Resource
                 Tables\Columns\ImageColumn::make('avatar')
                     ->disk('public')
                     ->circular(),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->icon('heroicon-m-envelope')
-                    ->iconColor('primary')  ,
+                    ->iconColor('primary')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('role')
                     ->badge()
                     ->color(fn ($state): string => match ($state ?? '') {
