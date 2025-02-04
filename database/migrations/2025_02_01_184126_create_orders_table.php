@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('delivery_charges')->nullable();
             $table->string('payment_mode')->default('COD');
             $table->enum('payment_status',['pending','done']);
-            $table->foreignId('user_detail_id')->constrained();
+            $table->foreignId('user_address_id')->constrained();
             $table->string('tracking_no')->nullable();
             $table->timestamps();
         });
