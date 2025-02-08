@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('warranty_period');
             $table->string('images');
             $table->string('certificate')->nullable();
-            $table->tinyInteger('status')->default(1)->comment('1=active,0=inactive');
+            $table->enum('status',['0','1'])->default(1)->comment("1=Active,0=Inactive");
             $table->timestamps();
         });
     }
