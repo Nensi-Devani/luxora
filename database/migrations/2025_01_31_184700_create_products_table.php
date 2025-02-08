@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('gemstone_id')->constrained();
             $table->foreignId('occasion_id')->constrained();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->longText('description');
             $table->enum('gender', ['men', 'women']);
             $table->integer('delivery_charge')->nullable();
