@@ -8,6 +8,7 @@ class Metal extends Model
 {
     protected $fillable = [
         'name',
+        'slug',
         'status'
     ];
 }

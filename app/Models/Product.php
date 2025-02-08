@@ -12,6 +12,7 @@ class Product extends Model
         'gemstone_id',
         'ocassion_id',
         'name',
+        'slug',
         'description',
         'gender',
         'delivery_charge',
