@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('text');
             $table->string('image');
             $table->string('redirect');
-            $table->enum('status',['0','1'])->default(1)->comment("1=Active,0=Inactive");
+            $table->boolean('status')->default(true)->comment('1 = Active, 0 = Inactive');
             $table->timestamps();
         });
     }
