@@ -7,6 +7,7 @@ use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Faker\Provider\Text;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -26,40 +27,44 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->minLength(2)
-                    ->autocapitalize('words'),
-                Forms\Components\TextInput::make('email')
-                    ->required(fn ($context) => $context === 'create')  // Required only on create
-                    ->unique(ignoreRecord: true) // Unique, but ignore the current record on edit
-                    ->email()
-                    ->autocomplete(false)
-                    ->readOnlyOn('edit'),
-                Forms\Components\TextInput::make('password')
-                    ->required()
-                    ->password()
-                    ->revealable()
-                    ->autocomplete(false)
-                    ->minLength(4)
-                    ->maxLength(12)
-                    ->visibleOn('create'),
-                Forms\Components\Select::make('role')
-                    ->options([
-                        RoleEnum::User->value => 'User',    // '0' => 'User'
-                        RoleEnum::Admin->value => 'Admin',  // '1' => 'Admin'
+                Section::make()
+                    ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->required()
+                        ->minLength(2)
+                        ->autocapitalize('words'),
+                    Forms\Components\TextInput::make('email')
+                        ->required(fn ($context) => $context === 'create')  // Required only on create
+                        ->unique(ignoreRecord: true) // Unique, but ignore the current record on edit
+                        ->email()
+                        ->autocomplete(false)
+                        ->readOnlyOn('edit'),
+                    Forms\Components\TextInput::make('password')
+                        ->required()
+                        ->password()
+                        ->revealable()
+                        ->autocomplete(false)
+                        ->minLength(4)
+                        ->maxLength(12)
+                        ->visibleOn('create'),
+                    Forms\Components\Select::make('role')
+                        ->options([
+                            RoleEnum::User->value => 'User',    // '0' => 'User'
+                            RoleEnum::Admin->value => 'Admin',  // '1' => 'Admin'
+                        ])
+                        ->default(RoleEnum::User->value)
+                        ->required()
+                        ->placeholder('Select a role')
+                        ->native(false),
+                    Forms\Components\FileUpload::make('avatar')
+                        ->openable()
+                        ->previewable(true)
+                        ->image()
+                        ->disk('public')
+                        ->directory('users')
+                        ->imageEditor()
                     ])
-                    ->default(RoleEnum::User->value)
-                    ->required()
-                    ->placeholder('Select a role')
-                    ->native(false),
-                Forms\Components\FileUpload::make('avatar')
-                    ->openable()
-                    ->previewable(true)
-                    ->image()
-                    ->disk('public')
-                    ->directory('users')
-                    ->imageEditor()
+                    ->columns(2)
             ]);
     }
 
@@ -72,7 +77,8 @@ class UserResource extends Resource
                 Tables\Columns\ImageColumn::make('avatar')
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('email')
                     ->icon('heroicon-m-envelope')
                     ->iconColor('primary')
@@ -85,10 +91,17 @@ class UserResource extends Resource
                     })
                     ->formatStateUsing(fn ($state) => $state === '0' ? 'User' : ($state === '1' ? 'Admin' : 'Unknown'))
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('role')
+                    ->options([
+                        '0' => 'User',
+                        '1' => 'Admin'
+                    ])
+                    ->native(false)
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
