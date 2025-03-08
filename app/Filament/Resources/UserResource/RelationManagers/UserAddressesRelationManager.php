@@ -58,6 +58,8 @@ class UserAddressesRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('address')
                     ->formatStateUsing(fn ($state) => strip_tags($state)),
+                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('city')
             ])
             ->filters([
                 //
