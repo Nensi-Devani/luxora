@@ -9,7 +9,7 @@ class Slider extends Model
     protected $fillable = [
         'text',
         'image',
-        'redirect',
+        'bg_color',
         'status'
     ];
 }
