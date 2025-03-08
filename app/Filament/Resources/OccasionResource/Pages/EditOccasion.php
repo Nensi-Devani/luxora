@@ -10,12 +10,12 @@ class EditOccasion extends EditRecord
 {
     protected static string $resource = OccasionResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\DeleteAction::make(),
-        ];
-    }
+//    protected function getHeaderActions(): array
+//    {
+//        return [
+//            Actions\DeleteAction::make(),
+//        ];
+//    }
 
     protected function getRedirectUrl(): string
     {
