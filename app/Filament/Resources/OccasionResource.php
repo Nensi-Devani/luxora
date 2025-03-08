@@ -59,16 +59,23 @@ class OccasionResource extends Resource
                 Tables\Columns\TextColumn::make('Sr no.')
                     ->rowIndex(),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\IconColumn::make('status')
-                    ->boolean(),
+                    ->searchable()
+                    ->sortable(),
+//              Tables\Columns\IconColumn::make('status')
+//                    ->boolean(),
+                Tables\Columns\ToggleColumn::make('status')
+                    ->onIcon('heroicon-m-eye')
+                    ->offIcon('heroicon-m-eye-slash')
+                    ->extraAttributes(['class'=>'w-8'])
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
                     ->options([
                         '1' => 'Active',
                         '0' => 'Inactive'
                     ])
+                    ->native(false)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
