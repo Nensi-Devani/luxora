@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('text');
             $table->string('image');
-            $table->string('redirect');
+            $table->string('bg_color');
             $table->boolean('status')->default(true)->comment('1 = Active, 0 = Inactive');
             $table->timestamps();
         });
