@@ -20,7 +20,7 @@ class MetalResource extends Resource
 {
     protected static ?string $model = Metal::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-square-3-stack-3d';
 
     public static function form(Form $form): Form
     {

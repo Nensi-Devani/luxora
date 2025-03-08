@@ -20,7 +20,7 @@ class GemstoneResource extends Resource
 {
     protected static ?string $model = Gemstone::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-stop-circle';
 
     public static function form(Form $form): Form
     {
