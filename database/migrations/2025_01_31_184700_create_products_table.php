@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('metal_id')->constrained();
-            $table->foreignId('category_id')->constrained();
-            $table->foreignId('gemstone_id')->constrained();
-            $table->foreignId('occasion_id')->constrained();
+            $table->foreignId('metal_id')->nullable()->constrained();
+            $table->foreignId('category_id')->nullable()->constrained();
+            $table->foreignId('gemstone_id')->nullable()->constrained();
+            $table->foreignId('occasion_id')->nullable()->constrained();
             $table->string('name');
             $table->string('slug')->unique();
             $table->longText('description');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('warranty_period');
             $table->string('images');
             $table->string('certificate')->nullable();
-            $table->boolean('status')->default(true)->comment('1 = Active, 0 = Inactive');
+            $table->boolean('status')->default(true)->comment('1=Active,0=Inactive');
             $table->timestamps();
         });
     }
