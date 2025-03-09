@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->longText('description');
-            $table->enum('gender', ['men', 'women']);
+            $table->char('gender')->nullable();
             $table->integer('delivery_charge')->nullable();
             $table->boolean('express_delivery_available')->default(false)->comment('false=No, true=Yes');
             $table->integer('express_delivery_charge')->nullable();
-            $table->string('warranty_period');
+            $table->string('warranty_period')->nullable();
             $table->string('images');
             $table->string('certificate')->nullable();
             $table->boolean('status')->default(true)->comment('1=Active,0=Inactive');
