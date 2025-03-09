@@ -30,6 +30,7 @@ class OccasionResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
+                            ->placeholder('Wedding')
                             ->unique(ignoreRecord: true)
                             ->label('Occasion')
                             ->live(onBlur: true)

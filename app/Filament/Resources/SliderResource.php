@@ -30,6 +30,8 @@ class SliderResource extends Resource
                     ->schema([
                         Forms\Components\Textarea::make('text')
                             ->required()
+                            ->autosize()
+                            ->placeholder('Get 10% Off Now !')
                             ->unique(ignoreRecord: true)
                             ->minLength(5)
                             ->validationMessages([

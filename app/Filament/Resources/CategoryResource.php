@@ -39,6 +39,7 @@ class CategoryResource extends Resource
                             ->native(false),
                         Forms\Components\TextInput::make('name')
                             ->required()
+                            ->placeholder('Ring')
                             ->unique(ignoreRecord: true)
                             ->label('Category')
                             ->live(onBlur: true)

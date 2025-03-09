@@ -30,6 +30,7 @@ class GemstoneResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
+                            ->placeholder('Ruby')
                             ->unique(ignoreRecord: true)
                             ->label('Gemstone')
                             ->live(onBlur: true)

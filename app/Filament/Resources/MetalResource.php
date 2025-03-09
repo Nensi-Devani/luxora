@@ -30,6 +30,7 @@ class MetalResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
+                            ->placeholder('Gold')
                             ->unique(ignoreRecord: true)
                             ->label('Metal')
                             ->live(onBlur: true)

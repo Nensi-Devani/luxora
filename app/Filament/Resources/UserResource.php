@@ -31,12 +31,14 @@ class UserResource extends Resource
                     ->schema([
                     Forms\Components\TextInput::make('name')
                         ->required()
+                        ->placeholder('John Doe')
                         ->minLength(2)
                         ->autocapitalize('words'),
                     Forms\Components\TextInput::make('email')
                         ->required(fn ($context) => $context === 'create')  // Required only on create
                         ->unique(ignoreRecord: true) // Unique, but ignore the current record on edit
                         ->email()
+                        ->placeholder('john@gmail.com')
                         ->autocomplete(false)
                         ->readOnlyOn('edit'),
                     Forms\Components\TextInput::make('password')

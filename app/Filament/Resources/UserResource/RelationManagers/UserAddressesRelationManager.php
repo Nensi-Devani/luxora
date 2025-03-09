@@ -20,21 +20,26 @@ class UserAddressesRelationManager extends RelationManager
             ->schema([
                 Forms\Components\TextInput::make('phone')
                     ->required()
+                    ->placeholder(123456789)
                     ->tel()
                     ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
                     ->length(10),
                 Forms\Components\TextInput::make('city')
                     ->required()
+                    ->placeholder('Rajkot')
                     ->minLength(2),
                 Forms\Components\TextInput::make('pin')
                     ->required()
+                    ->placeholder(360002)
                     ->label('Pincode')
                     ->length(6),
                 Forms\Components\TextInput::make('state')
                     ->required()
+                    ->placeholder('Gujarat')
                     ->minLength(3),
                 Forms\Components\RichEditor::make('address')
                     ->required()
+                    ->placeholder('House no. 123, "XYZ" street')
                     ->columnSpan(2)
                     ->disableToolbarButtons([
                         'attachFiles',
