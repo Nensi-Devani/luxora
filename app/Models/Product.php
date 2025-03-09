@@ -23,4 +23,25 @@ class Product extends Model
         'certificate',
         'status'
     ];
+
+    protected $casts = [
+        'images' => 'array'
+    ];
+
+    public function metal()
+    {
+        return $this->belongsTo(Metal::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function gemstone()
+    {
+        return $this->belongsTo(Gemstone::class);
+    }
+    public function occasion()
+    {
+        return $this->belongsTo(Occasion::class);
+    }
 }
