@@ -61,6 +61,8 @@ class UserAddressesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('address')
             ->columns([
+                Tables\Columns\TextColumn::make('Sr no.')
+                    ->rowIndex(),
                 Tables\Columns\TextColumn::make('address')
                     ->formatStateUsing(fn ($state) => strip_tags($state)),
                 Tables\Columns\TextColumn::make('phone'),
@@ -73,13 +75,14 @@ class UserAddressesRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+//                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+//                Tables\Actions\BulkActionGroup::make([
+//                    Tables\Actions\DeleteBulkAction::make(),
+//                ]),
             ]);
     }
 }
