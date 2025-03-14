@@ -77,7 +77,8 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('Sr no.')
                     ->rowIndex(),
                 Tables\Columns\ImageColumn::make('avatar')
-                    ->circular(),
+                    ->circular()
+                    ->defaultImageUrl(url('image/img.png')),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
