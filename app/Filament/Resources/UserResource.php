@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Product;
 use App\Models\User;
 use Faker\Provider\Text;
 use Filament\Forms;
@@ -86,6 +87,27 @@ class UserResource extends Resource
                     ->icon('heroicon-m-envelope')
                     ->iconColor('primary')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('wishlist_items')
+                    ->label('Wishlist Items')
+                    ->getStateUsing(function (User $record) {
+                        return $record->wishlists()->count();
+                    })
+                    ->icon(fn ($record) => 'heroicon-o-heart')
+                    ->alignCenter(),
+                Tables\Columns\TextColumn::make('cart_items')
+                    ->label('Cart Items')
+                    ->getStateUsing(function (User $record) {
+                        return $record->carts()->count();
+                    })
+                    ->icon(fn ($record) => 'heroicon-o-shopping-cart')
+                    ->alignCenter(),
+                Tables\Columns\TextColumn::make('orders')
+                    ->label('Total Orders')
+                    ->getStateUsing(function (User $record) {
+                        return $record->orders()->count();
+                    })
+                    ->icon(fn ($record) => 'heroicon-o-shopping-bag')
+                    ->alignCenter(),
                 Tables\Columns\TextColumn::make('role')
                     ->badge()
                     ->color(fn ($state): string => match ($state ?? '') {
