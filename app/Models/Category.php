@@ -13,4 +13,35 @@ class Category extends Model
         'image',
         'status',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function updateChildCategoriesStatus()
+    {
+        // Only update children if the status is 0 or 1
+        if ($this->status === 1) {
+            $this->children->each(function ($child) {
+                $child->update(['status' => $this->status]);
+            });
+        }
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($category) {
+            $category->updateChildCategoriesStatus();
+        });
+    }
+
 }
