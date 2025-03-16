@@ -19,4 +19,9 @@ class Order extends Model
         'user_detail_id',
         'tracking_no'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
