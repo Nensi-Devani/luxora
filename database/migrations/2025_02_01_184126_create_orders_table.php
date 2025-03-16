@@ -14,14 +14,11 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->integer('total_amount');
-            $table->enum('status',['pending','shipped','delivered','cancelled']);
-            $table->date('shipped_date');
-            $table->date('delivered_date');
-            $table->boolean('is_express_delivery')->default(false);
-            $table->integer('delivery_charges')->nullable();
+            $table->enum('status',['pending','shipped','delivered','cancelled'])->default('pending');
+            $table->date('shipped_date')->nullable();
+            $table->date('delivered_date')->nullable();
             $table->string('payment_mode')->default('COD');
-            $table->enum('payment_status',['pending','done']);
+            $table->enum('payment_status',['pending','done'])->default('pending');
             $table->foreignId('user_address_id')->constrained();
             $table->string('tracking_no')->nullable();
             $table->timestamps();
