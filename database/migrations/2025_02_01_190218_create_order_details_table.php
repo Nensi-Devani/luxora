@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreignId('product_discount_id')->nullable()->constrained();
             $table->integer('quantity');
             $table->integer('price');
+            $table->boolean('is_express_delivery')->default(false)->comment('0=No, 1=Yes');
+            $table->integer('delivery_charges')->nullable();
             $table->boolean('is_gifted')->default(false);
-            $table->integer('gift_charge')->nullable();
             $table->timestamps();
         });
     }
