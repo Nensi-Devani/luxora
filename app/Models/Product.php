@@ -28,6 +28,16 @@ class Product extends Model
         'images' => 'array'
     ];
 
+    public function productSizes()
+    {
+        return $this->hasMany(ProductSize::class);
+    }
+
+    public function productDiscounts()
+    {
+        return $this->hasMany(ProductDiscount::class);
+    }
+
     public function metal()
     {
         return $this->belongsTo(Metal::class);
@@ -43,5 +53,15 @@ class Product extends Model
     public function occasion()
     {
         return $this->belongsTo(Occasion::class);
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    public function getImageUrlAttribute($value)
+    {
+        return asset('storage/public/' . $value);
     }
 }
