@@ -12,4 +12,9 @@ class Cart extends Model
         'product_size_id',
         'quantity'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
