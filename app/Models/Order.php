@@ -28,4 +28,20 @@ class Order extends Model
     {
         return $this->belongsTo(UserAddress::class);
     }
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+    public function productSize()
+    {
+        return $this->belongsTo(ProductSize::class);
+    }
+    public function productDiscount()
+    {
+        return $this->belongsTo(ProductDiscount::class);
+    }
 }

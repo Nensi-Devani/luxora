@@ -13,4 +13,9 @@ class Review extends Model
         'comment',
         'image'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

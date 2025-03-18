@@ -13,7 +13,13 @@ class OrderDetail extends Model
         'product_discount_id',
         'quantity',
         'price',
-        'is_gifted',
-        'gift_charge'
+        'is_express_delivery',
+        'delivery_charges',
+        'is_gifted'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
