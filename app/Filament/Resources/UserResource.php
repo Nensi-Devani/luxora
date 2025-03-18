@@ -142,6 +142,7 @@ class UserResource extends Resource
             RelationManagers\UserAddressesRelationManager::class,
             RelationManagers\WishlistsRelationManager::class,
             RelationManagers\CartsRelationManager::class,
+            RelationManagers\ReviewsRelationManager::class
         ];
     }
 
