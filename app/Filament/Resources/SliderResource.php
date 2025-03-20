@@ -37,13 +37,16 @@ class SliderResource extends Resource
                             ->validationMessages([
                                 'unique' => 'The :attribute has already been added.'
                             ]),
+                        Forms\Components\Textarea::make('description')
+                            ->required()
+                            ->placeholder('Get the offer now... ! Be the first to win the gift ....'),
                         Forms\Components\FileUpload::make('image')
                             ->required()
                             ->openable()
                             ->previewable(true)
                             ->image()
                             ->disk('public')
-                            ->directory('users')
+                            ->directory('sliders')
                             ->imageEditor(),
                         Forms\Components\ColorPicker::make('bg_color')
                             ->required()
