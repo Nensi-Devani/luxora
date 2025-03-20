@@ -20,8 +20,8 @@ class ProductSizesRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('size')
-                    ->required()
-                    ->unique(ignoreRecord: true),
+                    ->required(),
+//                    ->unique(ignoreRecord: true),
                 Forms\Components\TextInput::make('stock')
                     ->required()
                     ->numeric(),
