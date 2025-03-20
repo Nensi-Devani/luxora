@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
             $table->string('text');
+            $table->mediumText('description');
             $table->string('image');
             $table->string('bg_color');
             $table->boolean('status')->default(true)->comment('1 = Active, 0 = Inactive');
