@@ -47,6 +47,7 @@ class ReviewsRelationManager extends RelationManager
                     ->openable()
                     ->previewable(true)
                     ->image()
+                    ->multiple()
                     ->disk('public')
                     ->directory('reviews')
                     ->imageEditor(),

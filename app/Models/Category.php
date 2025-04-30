@@ -24,6 +24,11 @@ class Category extends Model
         return $this->hasMany(Category::class);
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
     public function updateChildCategoriesStatus()
     {
         // Only update children if the status is 0 or 1

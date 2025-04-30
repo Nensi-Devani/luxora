@@ -16,7 +16,7 @@ class Order extends Model
         'delivery_charges',
         'payment_mode',
         'payment_status',
-        'user_detail_id',
+        'user_address_id',
         'tracking_no'
     ];
 

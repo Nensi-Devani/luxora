@@ -18,13 +18,13 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('metal_weight')->nullable();
             $table->string('metal_purity')->nullable();
-            $table->integer('metal_price')->nullable();
+            $table->integer('metal_price')->default(0);
             $table->string('gemstone_weight')->nullable();
             $table->string('gemstone_purity')->nullable();
-            $table->integer('gemstone_price')->nullable();
+            $table->integer('gemstone_price')->default(0);
             $table->integer('num_of_gemstone')->nullable();
-            $table->integer('making_charges')->nullable();
-            $table->integer('gst')->nullable();
+            $table->integer('making_charges')->default(0);
+            $table->integer('gst')->default(0);
             $table->timestamps();
         });
     }
