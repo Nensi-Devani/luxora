@@ -6,61 +6,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+# 💎 LUXORA - Jewellery Shop Website
 
-## About Laravel
+Welcome to **LUXORA**, an elegant and feature-rich jewellery shop web application built to deliver seamless shopping experiences for both customers and administrators.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛍️ User Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🔐 **Sign In / Sign Up**  
+- ❤️ **Add to Wishlist**  
+- 🛒 **Add to Cart**  
+- ⚡ **Buy Now**  
+- 💳 **Checkout**  
+- 👤 **My Profile / Edit Profile / Change Password**  
+- 📦 **My Orders**
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Admin Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 📦 **Manage Products, Stock, Discounts**
+- 🗂️ **Manage Categories, Sub-categories, Gemstones, Metals, Occasions**
+- 📋 **Manage Orders & Ordered Items**
+- 👥 **Manage Users**
+- 🧑‍💼 **Admin Profile Edit / Change Password**
+- ➕ **Add Another Admin**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🧰 Technologies Used
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<img src="https://icon.icepanel.io/Technology/svg/Bootstrap.svg" width="30"/> **Bootstrap**  
+<img src="https://www.svgrepo.com/show/353985/laravel.svg" width="30"/> **Laravel**  
+<img src="https://files.svgcdn.io/devicon/livewire.svg" width="30"/>  **Livewire**  
+<img src="data:image/png;base64,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" width="30"/> **Filament Admin Panel**
